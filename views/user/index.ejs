@@ -1,0 +1,31 @@
+<%- include("../partials/header.ejs") %>
+
+<div class = "container">
+    <h1 style="text-align: center"> All Existing Customers </h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"> PHONE </th>
+                <th scope="col"> FIRST NAME </th>
+                <th scope="col"> LAST NAME</th>
+                <th scope="col"> EMAIL </th>
+                <th scope="col"> VIEW ORDERS </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user){ %>
+            <tr>
+                <th scope = "row"> <%= user.PHONE %> </th>
+                <td> <%= user.FIRST_NAME %> </td>
+                <td> <%= user.LAST_NAME %> </td>
+                <td> <%= user.EMAIL %> </td>
+                <td> <a href="/users/<%= user.PHONE %>" class = "btn btn-info btn-sm"> VIEW </a> </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

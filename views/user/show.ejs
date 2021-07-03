@@ -1,0 +1,33 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <h1 style="text-align: center"> VIEW ALL ORDERS </h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"> ORDER ID </th>
+                <th scope="col"> DATE OF ORDER </th>
+                <th scope="col"> TIME OF ORDER </th>
+                <th scope="col"> AMOUNT </th>
+                <th scope="col"> VIEW ORDER </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach(function(obj){ %>
+            <tr>
+                <th scope="row"> <%= obj.OID %> </th>
+                <td> <%= obj.DATEO %> </td>
+                <td> <%= obj.TIMEO %> </td>
+                <td> <%= obj.AMT %> </td>
+                <td> 
+                    <a href="/orders/<%= obj.OID %>" class="btn btn-info btn-sm"> CLICK </a>
+                </td>
+
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs") %>
+
+<div class = "container">
+    <h1 style="text-align: center"> View All Products </h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"> PID </th>
+                <th scope="col"> NAME </th>
+                <th scope="col"> CATEGORY </th>
+                <th scope="col"> PRICE </th>
+                <th scope="col"> STOCK </th>
+                <th scope="col"> Update </th>
+                <th scope="col"> Delete </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(function(product){ %>
+            <tr>   
+                <th scope = "row"> <%= product.ID %> </th>
+                <td> <%= product.NAME %> </td>
+                <td> <%= product.CAT %> </td>
+                <td> <%= product.PRICE %> </td>
+                <td> <%= product.STOCK %> </td>
+                <td>
+                    <a href = "/products/<%= product.ID%>/edit"  class ="btn btn-info btn-sm"> CLICK </a>
+                </td>
+                <td> 
+                    <form method = "POST" action = "/products/<%= product.ID %>?_method=DELETE">
+                        <input type="submit" class="btn btn-danger btn-sm">
+                    </form>    
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../partials/footer.ejs") %>

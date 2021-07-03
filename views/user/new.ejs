@@ -1,0 +1,31 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+    <h1 style="text-align: center"> Add New Customer </h1>
+
+    <div class="row">
+        <div style="width: 40%; margin: 25px auto;">
+            <form action="/users" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="U[phone]" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="U[fname]" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="U[sname]" placeholder="Second name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="U[email]" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block"> Submit! </button>
+                </div>
+            </form>
+            <a href="/users"> Go Back! </a>
+        </div>
+    </div>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

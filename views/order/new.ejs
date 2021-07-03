@@ -1,0 +1,28 @@
+<%- include("../partials/header.ejs"); %>
+    <div class = "container" style = "width : 65%; margin : auto;">
+        <div class="jumbotron">
+            <h1 style="text-align: center"> New Order </h1>
+            <p style="text-align: center"> Enter appropriate details and hit ORDER! at the bottom. </p>
+
+            <form method="POST" action="/orders">
+                <input type="text" name="uid" placeholder="PHONE NO." required>
+                <input style="display : none" id="total" name="total" type="number" default="0">
+                <button class="btn btn-sm btn-success"> ORDER! </button>
+            </form>
+        </div>
+
+        <select id="maindrop">
+            <% products.forEach(function(product){ %>
+                <option value = "<%= product.ID %>"> <%= product.NAME %> - Rs.<%= product.PRICE %> </option>
+            <% }); %>
+        </select>
+        <input id="qty" type="number" step="1" default="0" min="0">
+        <input id="add"  class = "btn btn-sm btn-success" type="submit">
+        
+        <ul class="list-group">
+        </ul>
+
+        <h3 > Total : Rs. <span id = "cost">  0 </span></h3>
+    </div>
+    <script src="/src/transaction.js"> </script>
+<%- include("../partials/footer.ejs"); %>

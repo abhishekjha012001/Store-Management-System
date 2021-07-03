@@ -1,0 +1,24 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container" style = "width : 65%; margin : auto;">
+    <h1 style="text-align: center"> Details of Order <%= order_info[0].OID %> </h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"> PID </th>
+                <th scope="col"> QUANTITY </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% order_info.forEach(function(obj){ %>
+            <tr>
+                <th scope="row"> <%= obj.PID %> </th>
+                <td> <%= obj.QTY %> </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../partials/footer.ejs") %>

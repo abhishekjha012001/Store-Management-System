@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="src/lib/jquery-3.4.1.min.js"></script>        
+    </head>
+    <body>
+        <div id="container">
+            <h1> New Order <i class="fas fa-chevron-down"></i> </h1>
+            
+            <select id = "maindrop">
+                <option value = "101"> choclate </option>
+                <option value = "102"> biscuit </option>
+                <option value = "103"> noodle </option>
+                <option value = "104"> sugar </option>
+            </select>
+            <input id = "qty" type = "number" step = "1"  default = "0" min = "0"> 
+            <input id = "add" type = "submit">
+            <ul>
+            </ul>
+            <form method = "POST" action = "/transaction">
+                <button> Submit </button>
+            </form>
+
+        </div>
+
+        <script src="/src/transaction.js"> </script>
+    </body>
+</html>

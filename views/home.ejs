@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs"); %>
+    <div class = "container" style = "width : 65%; margin : auto;">
+        <div class="jumbotron">
+            <h1> HOME PAGE</h1>
+            <p> Select the operation to perform from below options. </p>
+        </div>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                HOME PAGE
+            </a>
+            <a href="/orders/new" class="list-group-item"> ADD NEW ORDER </a>
+            <a href="/products" class="list-group-item"> VIEW ALL PRODUCTS </a>
+            <a href="/products/new" class="list-group-item"> ADD NEW PRODUCT </a>
+            <a href="/users" class="list-group-item"> VIEW ALL CUSTOMERS </a>
+            <a href="/users/new" class="list-group-item"> ADD NEW CUSTOMER </a>
+        </div>
+    </div>
+<%- include("partials/footer.ejs"); %>
